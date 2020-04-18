@@ -12,7 +12,6 @@ const QuestionPollResults = (props) => {
     const totalVotes = question.optionOne.votes.length + question.optionTwo.votes.length;
 
     const optionSelected = question.optionOne.votes.includes(author.id) ? "optionOne" : "optionTwo";
-
     let optionOneWidth = Math.round((question.optionOne.votes.length / totalVotes) * 100);
     let optionTwoWidth = Math.round((question.optionTwo.votes.length / totalVotes) * 100);
 
@@ -36,6 +35,7 @@ const QuestionPollResults = (props) => {
                                                 <div className='question-info'>
                                                     <div className='col-sm-12 '>
                                                         <div className='results-header'>Results:</div>
+                                                        <div>your chosen option is highlighted in green</div>
                                                         <div className={`card card-poll-results ${(optionSelected === 'optionOne') ? "chosen-answer" : ""}`}>Would you rather {question.optionOne.text}?
 
                                                             <div className="progress m-progress--sm">
@@ -44,7 +44,7 @@ const QuestionPollResults = (props) => {
                                                                      ></div>
                                                             </div>
                                                             <div>
-                                                                <span>{question.optionOne.votes.length} out of {totalVotes} votes. ({optionTwoWidth}%)</span>
+    <span>{question.optionOne.votes.length} out of {totalVotes} votes. ({optionOneWidth}%)</span>
                                                             </div>
 
                                                         </div>

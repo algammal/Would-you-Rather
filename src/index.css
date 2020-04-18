@@ -107,3 +107,6 @@ img{
 .m--bg-success{
   background-color: #ff8600;
 }
+.chosen-answer .progress-bar{
+  background-color: green;
+}
